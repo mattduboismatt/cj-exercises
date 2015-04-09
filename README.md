@@ -13,6 +13,7 @@ This challenge was a lot more interesting than I imagined upon first reading thr
 * Handle "67:89" same as "1:08:19"
 
 The general program pseudocode is as follows:
+
 1. take input string and split with space delimiter to get array of times
 2. iterate through each time in the array
 3. ensure time is valid format such as SS, M:SS, MM:SS, or H:MM:SS
