@@ -8,17 +8,17 @@ Prove that you can correctly implement a function where
 #### Reflection:
 
 This challenge was a lot more interesting than I imagined upon first reading through it.  I wanted to maintain a solid handling of edge cases, so I wrote out tests for standard inputs, invalid inputs, and edge cases.  For example, I wanted the following to happen:
-  -Handle "5" as 5 seconds
-  -Raise error for a time input without full seconds, ex. "12:4"
-  -Handle "67:89" same as "1:08:19"
+* Handle "5" as 5 seconds
+* Raise error for a time input without full seconds, ex. "12:4"
+* Handle "67:89" same as "1:08:19"
 
 The general program pseudocode is as follows:
-  1) take input string and split with space delimiter to get array of times
-  2) iterate through each time in the array
-    2a) ensure time is valid format such as SS, M:SS, MM:SS, or H:MM:SS
-    2b) convert each time to seconds
-  3) sum up all of the seconds
-  4) convert the seconds back into time format
+1. take input string and split with space delimiter to get array of times
+2. iterate through each time in the array
+2a. ensure time is valid format such as SS, M:SS, MM:SS, or H:MM:SS
+2b. convert each time to seconds
+3. sum up all of the seconds
+4. convert the seconds back into time format
 
 One tricky problem was converting the seconds back into time.  I did this by calculating the hours, minutes, and seconds (using division and then remainders), and then concatinating them together with properly justified (leading zeroes) and with colons.  I had to then write a nasty regex to remove the leading zeroes and any unnecessary colons.
 
